@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maison du Bois | Bois ancien fait main</title>
+    <meta
+      name="description"
+      content="Objets en bois faits main dans un petit atelier, a partir de bois ancien recupere localement."
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="intro" id="intro" aria-label="Page d'entree">
+      <div class="intro-mark" aria-label="Emplacement futur logo">Maison du Bois</div>
+      <button class="enter-button" id="enter-button">Entrer</button>
+    </section>
+
+    <header class="topbar">
+      <a class="brand" href="#">Maison du Bois</a>
+      <nav aria-label="Navigation principale">
+        <a href="#atelier">Atelier</a>
+        <a href="#matiere">Matiere</a>
+        <button class="plain-button" data-panel="search">Search</button>
+        <button class="cart-button" data-panel="cart">Cart <span id="cart-count">0</span></button>
+        <button class="menu-button" data-panel="menu" aria-label="Menu">
+          <span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="experience theme-bowl" id="experience" aria-labelledby="product-name">
+      <canvas id="scene" aria-label="Objet en bois en 3D"></canvas>
+
+      <section class="product-copy">
+        <p class="kicker">Bois ancien recupere localement</p>
+        <h1 id="product-name">Coupe Racine</h1>
+        <p id="product-description">
+          Piece tournee a la main dans un bois de recuperation tres ancien, conservee
+          avec ses marques naturelles.
+        </p>
+      </section>
+
+      <section class="product-meta" aria-label="Details produit">
+        <div>
+          <span id="product-number">01</span>
+          <p id="product-material">Noyer ancien</p>
+        </div>
+        <button class="buy-button" id="buy-button">Acheter - 120 EUR</button>
+      </section>
+
+      <div class="switcher" aria-label="Changer d'objet">
+        <button id="prev-product" aria-label="Objet precedent">&lsaquo;</button>
+        <div>
+          <span id="switch-label">01 / 03</span>
+          <small>Glisse pour faire tourner</small>
+        </div>
+        <button id="next-product" aria-label="Objet suivant">&rsaquo;</button>
+      </div>
+    </main>
+
+    <section class="atelier-band" id="atelier">
+      <p>Petit atelier. Pieces courtes. Aucun bois neuf.</p>
+      <p>
+        Chaque objet est faconne a partir de bois ancien recupere localement,
+        selectionne pour ses veines, ses accidents et sa memoire.
+      </p>
+    </section>
+
+    <section class="matter" id="matiere">
+      <span>Chene</span>
+      <span>Noyer</span>
+      <span>Frene</span>
+      <span>Erable</span>
+      <span>Ancien bois de recuperation</span>
+    </section>
+
+    <aside class="panel" id="cart-panel" aria-hidden="true">
+      <div class="panel-head">
+        <h2>Cart</h2>
+        <button data-close aria-label="Fermer">x</button>
+      </div>
+      <div id="cart-items" class="empty">Looks like you haven't added anything yet.</div>
+      <button class="checkout">Continue Shopping</button>
+    </aside>
+
+    <aside class="panel" id="search-panel" aria-hidden="true">
+      <div class="panel-head">
+        <h2>Search</h2>
+        <button data-close aria-label="Fermer">x</button>
+      </div>
+      <input type="search" placeholder="Coupe, plateau, noyer..." aria-label="Recherche" />
+    </aside>
+
+    <aside class="panel menu-panel" id="menu-panel" aria-hidden="true">
+      <div class="panel-head">
+        <h2>Menu</h2>
+        <button data-close aria-label="Fermer">x</button>
+      </div>
+      <a href="#atelier">Atelier</a>
+      <a href="#matiere">Matiere</a>
+      <a href="mailto:bonjour@maisondubois.fr">Contact</a>
+    </aside>
+
+    <div class="overlay" data-close></div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
