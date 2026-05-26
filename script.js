@@ -768,10 +768,28 @@ document.querySelectorAll("[data-close]").forEach((button) => {
   button.addEventListener("click", closePanels);
 });
 
+document.querySelectorAll(".menu-panel a").forEach((link) => {
+  link.addEventListener("click", closePanels);
+});
+
+document.querySelectorAll("[data-jump-product]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const nextIndex = Number(button.dataset.jumpProduct);
+    setProduct(nextIndex);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
 document.querySelector("#buy-button").addEventListener("click", () => {
   cart.push(products[activeIndex].name);
   renderCart();
   openPanel("cart");
+});
+
+document.querySelector(".contact-form")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const note = document.querySelector("#form-note");
+  if (note) note.textContent = "Message prepare. Le formulaire sera branche a l'etape suivante.";
 });
 
 document.body.classList.add("intro-active");
@@ -789,4 +807,19 @@ document.addEventListener("keydown", (event) => {
 window.addEventListener("resize", resize);
 resize();
 setProduct(0);
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+);
+
+document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
 animate();
