@@ -15,11 +15,21 @@
         }
       }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <section class="intro" id="intro" aria-label="Page d'entree">
-      <div class="intro-mark" aria-label="Emplacement futur logo">Maison du Bois</div>
+      <div class="intro-content">
+        <p class="intro-kicker">Objets en bois ancien / faits main</p>
+        <div class="intro-mark" aria-label="Emplacement futur logo">Maison du Bois</div>
+        <p class="intro-subtitle">Une collection courte, utile, silencieuse.</p>
+      </div>
       <button class="enter-button" id="enter-button">Entrer</button>
     </section>
 
@@ -27,9 +37,9 @@
       <a class="brand" href="#">Maison du Bois</a>
       <nav aria-label="Navigation principale">
         <a href="#collection">Collection</a>
-        <a href="#histoire">Histoire</a>
+        <a href="histoire.html">Histoire</a>
         <a href="#matiere">Matiere</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
         <button class="plain-button" data-panel="search">Search</button>
         <button class="cart-button" data-panel="cart">Cart <span id="cart-count">0</span></button>
         <button class="menu-button" data-panel="menu" aria-label="Menu">
@@ -64,10 +74,11 @@
         <button id="prev-product" aria-label="Objet precedent">&lsaquo;</button>
         <div>
           <span id="switch-label">01 / 03</span>
-          <small>Glisse pour faire tourner</small>
+          <small>Glisse pour explorer</small>
         </div>
         <button id="next-product" aria-label="Objet suivant">&rsaquo;</button>
       </div>
+      <a class="product-link" id="product-link" href="produit-boite.html">Page produit</a>
     </main>
 
     <section class="atelier-band reveal" id="atelier">
@@ -97,18 +108,45 @@
           <h3>Boite de Table</h3>
           <p>Noyer ancien, lignes douces, couvercle legerement sureleve.</p>
           <button data-jump-product="0">Voir la piece</button>
+          <a href="produit-boite.html">Details</a>
         </article>
         <article class="product-card reveal" data-product-card="1">
           <span>02</span>
           <h3>Planche Service</h3>
           <p>Chene recupere, poignee fine, surface pensee pour le quotidien.</p>
           <button data-jump-product="1">Voir la piece</button>
+          <a href="produit-planche.html">Details</a>
         </article>
         <article class="product-card reveal" data-product-card="2">
           <span>03</span>
           <h3>Pot Tourne</h3>
           <p>Frene ancien, volume tourne, bouche sombre et silhouette calme.</p>
           <button data-jump-product="2">Voir la piece</button>
+          <a href="produit-pot.html">Details</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="product-strip reveal" aria-label="Navigation produits">
+      <div>
+        <p class="kicker">Glisser</p>
+        <h2>Parcourir la collection par la matiere.</h2>
+      </div>
+      <div class="strip-track" id="strip-track">
+        <article data-strip-product="0">
+          <span>01</span>
+          <h3>Boite de Table</h3>
+          <p>Noyer profond</p>
+        </article>
+        <article data-strip-product="1">
+          <span>02</span>
+          <h3>Planche Service</h3>
+          <p>Chene blond</p>
+        </article>
+        <article data-strip-product="2">
+          <span>03</span>
+          <h3>Pot Tourne</h3>
+          <p>Frene clair</p>
         </article>
       </div>
     </section>
@@ -212,8 +250,8 @@
     <footer class="site-footer">
       <a href="#">Maison du Bois</a>
       <a href="#collection">Collection</a>
-      <a href="#histoire">Histoire</a>
-      <a href="#contact">Contact</a>
+      <a href="histoire.html">Histoire</a>
+      <a href="contact.html">Contact</a>
     </footer>
 
     <aside class="panel" id="cart-panel" aria-hidden="true">
@@ -239,10 +277,10 @@
         <button data-close aria-label="Fermer">x</button>
       </div>
       <a href="#collection">Collection</a>
-      <a href="#histoire">Histoire</a>
+      <a href="histoire.html">Histoire</a>
       <a href="#atelier">Atelier</a>
       <a href="#matiere">Matiere</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
       <a href="mailto:bonjour@maisondubois.fr">Email</a>
     </aside>
 
