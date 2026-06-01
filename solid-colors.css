@@ -1,0 +1,43 @@
+.intro {
+  background: #1b1610;
+}
+
+.experience::before {
+  background: rgba(255, 244, 226, 0.035);
+}
+
+.experience::after {
+  background: rgba(18, 16, 12, 0.42);
+}
+
+.experience.theme-bowl {
+  --scene-bg: #9b633d;
+}
+
+.experience.theme-tray {
+  --scene-bg: #b98a48;
+}
+
+.experience.theme-totem {
+  --scene-bg: #7f8f61;
+}
+
+.page-body {
+  background: #e7d6bd;
+}
+
+.product-visual {
+  background: #a87047;
+}
+
+.product-visual::before {
+  background: #6f3718;
+}
+
+.strip-track article {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.strip-track article:hover {
+  background: rgba(255, 255, 255, 0.055);
+}
