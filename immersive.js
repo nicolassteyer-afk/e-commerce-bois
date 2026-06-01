@@ -40,6 +40,7 @@ function updateScrollProgress() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const amount = max > 0 ? window.scrollY / max : 0;
   progress.style.transform = `scaleX(${Math.min(1, Math.max(0, amount))})`;
+  document.body.classList.toggle("has-scrolled", window.scrollY > 96);
 }
 
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
